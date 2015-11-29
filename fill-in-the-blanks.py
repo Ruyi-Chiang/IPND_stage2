@@ -26,8 +26,7 @@ parts_of_lyrics_easy  = ["_1____", "_2___", "_3__", "_4__"]
 # Correct answers for easy quiz
 correct_answers_easy = ["spider", "spout", "rain", "sun"]
 
-# try function start_quiz
-start_quiz(easy_quiz, parts_of_lyrics_easy, correct_answers_easy)
+
 
 #Medium quiz
 medium_quiz_title = "Let it go"
@@ -39,13 +38,6 @@ parts_of_lyrics_medium  = ["_1__", "_2_____", "_3__", "_4___", "_5____"]
 
 correct_answers_medium = ["girl", "anymore", "care", "storm", "anyway"]
 
-start_quiz(medium_quiz, parts_of_lyrics_medium, correct_answers_medium)
-
-
-
-
-
-
 # Hard quiz
 hard_quiz_title = "Hello"
 lyrics_hard = "Hello, it's me. I was wondering if after all these years you'd like to meet. To go over everything. They say that time's supposed to heal ya. But I ain't done much healing. Hello, can you hear me. I'm in California dreaming about who we used to be. When we were younger and free. I've forgotten how it felt before the world fell at our feet"
@@ -56,4 +48,19 @@ parts_of_lyrics_hard  = ["_1", "_2_______", "_3_____", "_4__", "_5________", "_6
 
 correct_answers_hard = ["me", "wondering", "healing", "hear", "California", "younger"]
 
-start_quiz(hard_quiz, parts_of_lyrics_hard, correct_answers_hard)
+# Ask user to choose quiz level
+
+def choose_level():
+	level = raw_input("Which level would you like to try? (easy/ medium/ hard)")
+	while level not in ["easy", "medium", "hard"]:
+		level = raw_input("Please input easy/ medium/ hard. Which level?")
+	if level == "easy":
+		start_quiz(easy_quiz, parts_of_lyrics_easy, correct_answers_easy)
+	elif level == "medium":
+		start_quiz(medium_quiz, parts_of_lyrics_medium, correct_answers_medium)
+	else:
+		start_quiz(hard_quiz, parts_of_lyrics_hard, correct_answers_hard)
+
+choose_level()
+	
+
