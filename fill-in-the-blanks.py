@@ -16,11 +16,14 @@ correct_answers = ["spider", "spout", "rain", "sun"]
 
 
 #Ask first question and check if it is correct or not
-user_input= raw_input ("What's " + parts_of_speech1[0] + "? ")
-while user_input != correct_answers[0]:
-	user_input= raw_input ("oohoh.. incorrect. Try again. What's " + parts_of_speech1[0] + "? ")
-quiz = quiz.replace(parts_of_speech1[0], correct_answers[0])
-print quiz
+for quiz_num in range(0, len(parts_of_speech1)):
+	user_input= raw_input ("What's " + parts_of_speech1[quiz_num] + "? ")
+	while user_input != correct_answers[quiz_num]:
+		user_input= raw_input ("oohoh.. incorrect. Try again. What's " + parts_of_speech1[quiz_num] + "? ")
+	quiz = quiz.replace(parts_of_speech1[quiz_num], correct_answers[quiz_num])
+	print quiz
+	if quiz_num == 3: #need to make 3 more understandable
+		print "Congratulations! You finished the quiz."
 	
 
 
